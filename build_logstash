@@ -1,0 +1,5 @@
+#!/bin/bash
+
+gem build logstash-output-OMS.gemspec
+/opt/logstash/bin/logstash-plugin install logstash-output-OMS-0.1.0.gem
+/opt/logstash/bin/logstash -f /opt/logstash/oms-pipeline.conf.2
