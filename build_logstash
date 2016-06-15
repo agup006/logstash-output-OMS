@@ -1,5 +1,5 @@
 #!/bin/bash
-
+VERSION=`grep s.version logstash-output-OMS.gemspec | awk -F'"' '{print $2}'`
 gem build logstash-output-OMS.gemspec
-/opt/logstash/bin/logstash-plugin install logstash-output-OMS-0.1.0.gem
-/opt/logstash/bin/logstash -f /opt/logstash/oms-pipeline.conf.2
+/opt/logstash/bin/plugin install logstash-output-OMS-${VERSION}.gem
+/opt/logstash/bin/logstash -f /etc/logstash/conf.d/oms-pipeline.conf
