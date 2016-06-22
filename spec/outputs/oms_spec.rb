@@ -4,9 +4,9 @@ require "logstash/outputs/example"
 require "logstash/codecs/plain"
 require "logstash/event"
 
-describe LogStash::Outputs::Example do
+describe LogStash::Outputs::OMS do
   let(:sample_event) { LogStash::Event.new }
-  let(:output) { LogStash::Outputs::Example.new }
+  let(:output) { LogStash::Outputs::OMS.new }
 
   before do
     output.register
